@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Product>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    @if (Model != null)
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr>
+                        <td>@p.Id</td>
+                        <td>@p.Name</td>
+                        <td>@p.Category</td>
+                    </tr>
+                }
+                <tr>
+                    @*<td colspan="4" align="left">
+                        <pager list="@Model" asp-controller="Home" asp-action="Index"></pager>
+                    </td>*@
+                </tr>
+            </tbody>
+        </table>
+
+    }
+    @*<nav>
+            @await this.Component.InvokeAsync("Pager",new { pagingList=this.Model})
+        </nav>*@
+</body>

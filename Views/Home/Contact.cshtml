@@ -1,0 +1,42 @@
+﻿@model PersonListViewModel
+
+@{
+    ViewData["Title"] = "Contact";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Proffesion</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model.People)
+                {
+                    <tr>
+                        <td>@p.Id</td>
+                        <td>@p.Name</td>
+                        <td>@p.Proffesion</td>
+                        <td>@p.Salary</td>
+                    </tr>
+                }
+                
+            </tbody>
+        </table>
+
+    
+   <div page-model="@Model.PagingInfo" page-action="Contact"></div>
+</body>
+</html>
